@@ -117,7 +117,7 @@ function [ egrad, store ] = egradfun( a, store, Y, k, n, lambda, mu, xinit, xpos
     egrad = zeros(prod(k)*n,1, 'gpuArray');
     for i = 1:n
         idx = (i-1)*prod(k) + (1:prod(k));
-        tmp = convfft2( store.X, convfft2( reshape(a(idx), k), store.X ) + store.b - Y(:,:,i), 1, m+k-1, m);
+        tmp = convfft2( store.X, convfft2( reshape(a(idx), k), store.X ) + store.b(i) - Y(:,:,i), 1, m+k-1, m);
         tmp = tmp(1:k(1), 1:k(2));
         egrad(idx) = tmp(:);
     end

@@ -83,7 +83,8 @@ function [ Xsol, info ] = Xsolve_FISTA( Y, A, lambda, mu, varargin )
 
         tmp = grad_fW;
         for i = 1:n
-            tmp(:,:,i) = tmp(:,:,i) + grad_fu(i);  
+            %tmp(:,:,i) = tmp(:,:,i) + grad_fu(i);
+            tmp = tmp + grad_fu(i); %testing  
         end
         delta = g.diffsubg(X, -tmp, lambda, xpos);
         delta = norm(delta(:))/sqrt(prod(m));
