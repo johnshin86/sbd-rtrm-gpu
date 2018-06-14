@@ -8,8 +8,8 @@ For documentations, info and references see [docs/README.ipynb](./docs/README.ip
 
 ## Updates
 **2018-03-16**:
--Implemented backwards Compatibility with Xsolve_pdNCG. 
--Multiple slices now works correctly for Xsolve_FISTA.
+- Implemented backwards compatibility with Xsolve_pdNCG. 
+- Multiple slices now works correctly for Xsolve_FISTA.
 
 **2018-02-19**:
 - Removed `signflip` option

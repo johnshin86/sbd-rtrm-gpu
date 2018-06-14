@@ -129,10 +129,18 @@ if params.phase2
 end
 
 %% Finished: get the final A, X
-Aout = A2(kplus(1)+(1:k(1)), kplus(2)+(1:k(2)), :);
-Xout = circshift(X2sol.X,kplus) * norm(Aout(:));
-Aout = Aout/norm(Aout(:));
-bout = X2sol.b;
+if params.phase2
+    Aout = A2(kplus(1)+(1:k(1)), kplus(2)+(1:k(2)), :);
+    extras.normA = norm(Aout(:));
+    Xout = circshift(X2sol.X,kplus) * norm(Aout(:));
+    Aout = Aout/norm(Aout(:));
+    bout = X2sol.b;
+else
+    Aout = A;
+    extras.normA = norm(Aout(:));
+    Xout = Xsol.X;
+    bout = Xsol.b;
+end
 
 runtime = toc(starttime);
 fprintf('\nDone! Runtime = %.2fs. \n\n', runtime);
