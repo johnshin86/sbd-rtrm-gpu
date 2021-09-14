@@ -22,6 +22,6 @@ For documentations, info and references see [docs/README.ipynb](./docs/README.ip
 ## Upcoming changes
 - Adding a reweighting method to sharpen recovered activation maps
 - Make `SBD.m` work for multiple slices of data
-- Account for border effects# sbd-rtrm-gpu
+- Account for border effects
 # sbd-rtrm-gpu
 # sbd-rtrm-gpu
